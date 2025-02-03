@@ -3,7 +3,7 @@ import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
 const GoogleLoginButton = ({ onSuccess }) => {
   return (
-    <GoogleOAuthProvider clientId={"60157734107-hq2fi6iunlmlttnhi52ars2fppsu7dkd.apps.googleusercontent.com"}>
+    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
       <GoogleLogin
         onSuccess={(credentialResponse) => {
           localStorage.setItem('userToken', credentialResponse.credential);
